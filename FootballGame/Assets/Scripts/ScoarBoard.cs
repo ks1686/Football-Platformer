@@ -26,13 +26,17 @@ public class ScoarBoard : MonoBehaviour
             names[i].text = msg[i].Username;
             scores[i].text = msg[i].Score.ToString();
            }
-       }));
+       }), (error) => {
+           Debug.LogWarning("Leaderboard fetch failed: " + error);
+       });
     }
 
     public void SetLeaderboardEntry(String username, int score){
-        LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, 
+        LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username,
         score, ((msg) => {
             GetLeaderboard();
-        }));
+        }), (error) => {
+            Debug.LogWarning("Leaderboard upload failed: " + error);
+        });
     }
 }

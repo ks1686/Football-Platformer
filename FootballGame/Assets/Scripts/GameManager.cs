@@ -1,17 +1,16 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Required for loading scenes
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; } // Singleton
+    public static GameManager Instance { get; private set; }
 
     private bool gameHasEnded = false;
-    private string exitSceneName = "Exit Scene"; // <<< Make sure this matches your scene name EXACTLY
-    public const string FinalScoreKey = "FinalScore"; // Key for PlayerPrefs
+    private string exitSceneName = "Exit Scene";
+    public const string FinalScoreKey = ScoreRules.FinalScoreKey;
 
     void Awake()
     {
-        // Implement the Singleton pattern
         if (Instance == null)
         {
             Instance = this;
@@ -25,15 +24,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameHasEnded = false;
-        Time.timeScale = 1f; // Ensure game time is running normally
-    }
-
-    void Update()
-    {
-        // No longer checking for win condition here.
-        // Game end is triggered ONLY by the timer via CheckLoseCondition.
-        if (gameHasEnded) return; // Only necessary if other things could potentially call TriggerGameEnd
-
+        Time.timeScale = 1f;
+        PlayerPrefs.DeleteKey(FinalScoreKey);
     }
 
     // Called by TimerManager when time runs out

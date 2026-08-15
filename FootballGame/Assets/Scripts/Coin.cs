@@ -18,9 +18,6 @@ public class Coin : MonoBehaviour
 
     void Collect(GameObject player)
     {
-        Debug.Log("Coin collected!"); // testing logs
-
-        // score manager logic
         if (ScoreManager.Instance != null)
         {
             ScoreManager.Instance.AddScore(coinValue);

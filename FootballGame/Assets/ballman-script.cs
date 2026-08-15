@@ -11,8 +11,33 @@ public class BallmanController : MonoBehaviour
 
     private Vector3 movementDirection = Vector3.zero;
 
+    void Awake()
+    {
+        var firstPerson = FindObjectOfType<StarterAssets.FirstPersonController>();
+        if (firstPerson != null && firstPerson.gameObject != gameObject)
+        {
+            enabled = false;
+            var controller = GetComponent<CharacterController>();
+            if (controller != null)
+            {
+                controller.enabled = false;
+            }
+            return;
+        }
+
+        if (!CompareTag("Player"))
+        {
+            gameObject.tag = "Player";
+        }
+    }
+
     void Start()
     {
+        if (!enabled)
+        {
+            return;
+        }
+
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
     }

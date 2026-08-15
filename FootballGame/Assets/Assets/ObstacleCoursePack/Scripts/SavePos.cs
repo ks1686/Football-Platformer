@@ -8,9 +8,13 @@ public class SavePos : MonoBehaviour
 
 	void OnTriggerEnter(Collider col)
 	{
-		if (col.gameObject.tag == "Player")
-		{
-			col.gameObject.GetComponent<CharacterControls>().checkPoint = checkPoint.position;
-		}
+        if (col.CompareTag("Player"))
+        {
+            var controls = col.GetComponent<CharacterControls>();
+            if (controls != null && checkPoint != null)
+            {
+                controls.checkPoint = checkPoint.position;
+            }
+        }
 	}
 }

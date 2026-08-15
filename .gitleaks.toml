@@ -1,0 +1,9 @@
+title = "Football-Platformer"
+
+[[allowlists]]
+description = "DanQZQ public leaderboard keys are public-by-design"
+paths = [
+  '''FootballGame/Assets/Scripts/ScoarBoard.cs''',
+  '''FootballGame/Assets/LeaderboardCreator/Scripts/Main/Leaderboards.cs''',
+  '''FootballGame/Assets/LeaderboardCreator/leaderboards.json''',
+]

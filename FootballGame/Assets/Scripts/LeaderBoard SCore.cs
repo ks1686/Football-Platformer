@@ -6,8 +6,6 @@ public class LeaderBoardSCore : MonoBehaviour
   {
     public TextMeshProUGUI finalScoreTextElement; // For TextMeshPro Text
 
-    private const string ScorePlayerPrefsKey = "FinalScore";
-
     void Start()
     {
         if (finalScoreTextElement == null)
@@ -16,12 +14,7 @@ public class LeaderBoardSCore : MonoBehaviour
             return;
         }
 
-        int finalScore = PlayerPrefs.GetInt(ScorePlayerPrefsKey, 0);
-        Debug.Log($"[EndScreenUI] Retrieved score from PlayerPrefs using key '{ScorePlayerPrefsKey}': {finalScore}");
-
-        finalScoreTextElement.text = $"{finalScore}"; 
-
-        // Optional: Clear the saved score from PlayerPrefs
-        PlayerPrefs.DeleteKey(ScorePlayerPrefsKey);
-}
+        int finalScore = PlayerPrefs.GetInt(ScoreRules.FinalScoreKey, 0);
+        finalScoreTextElement.text = finalScore.ToString();
+    }
   }

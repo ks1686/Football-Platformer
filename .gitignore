@@ -74,15 +74,25 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 FootballGame/Library/PackageCache/
-
 FootballGame/Temp/
-
 FootballGame/Library/
-
 FootballGame/Logs/
-
 FootballGame/UserSettings/
-
 FootballGame/.vscode/
-
+FootballGame/.idea/
+FootballGame/UIElementsSchema/
+FootballGame/[Oo]bj/
+FootballGame/[Bb]uild/
+FootballGame/[Bb]uilds/
+FootballGame/[Mm]emoryCaptures/
+FootballGame/[Rr]ecordings/
+FootballGame/*.zip
+FootballGame/*.so
 FootballGame/Dash and Grab.x86_64
+FootballGame/Dash and Grab_Data/
+FootballGame/Dash and Grab_BurstDebugInformation_DoNotShip/
+
+# Allow the CI test project (Unity template ignores *.csproj)
+tests/**/bin/
+tests/**/obj/
+!tests/**/*.csproj

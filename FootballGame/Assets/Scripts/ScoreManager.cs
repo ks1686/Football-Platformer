@@ -6,7 +6,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; private set; }
 
-    public int targetScore = 400000;
+    public int targetScore = ScoreRules.DefaultTargetScore;
     public TextMeshProUGUI scoreText;
 
     private int currentScore = 0;
@@ -34,7 +34,6 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int amount)
     {
         currentScore += amount;
-        Debug.Log($"Score: {currentScore} / {targetScore}"); // For testing
         UpdateScoreUI();
     }
 
@@ -52,10 +51,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            // Example format: "Score: 1500 / 400000"
-            // get the final score
-            scoreText.text = $"Score: {currentScore}";
-            // Or just show current score: scoreText.text = $"Score: {currentScore}";
+            scoreText.text = ScoreRules.FormatHudScore(currentScore);
         }
         else
         {
