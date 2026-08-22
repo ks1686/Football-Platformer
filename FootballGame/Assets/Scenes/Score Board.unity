@@ -894,7 +894,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1026954715}
-        m_TargetAssemblyTypeName: ScoarBoard, Assembly-CSharp
+        m_TargetAssemblyTypeName: Scoreboard, Assembly-CSharp
         m_MethodName: SetLeaderboardEntry
         m_Mode: 0
         m_Arguments:
@@ -950,7 +950,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 540200032}
-        m_TargetAssemblyTypeName: LEaderBoardSCoreManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: LeaderboardScoreManager, Assembly-CSharp
         m_MethodName: SubmitScore
         m_Mode: 1
         m_Arguments:
