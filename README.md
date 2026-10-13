@@ -69,3 +69,9 @@ Linux player output (`Dash and Grab_Data/`, `UnityPlayer.so`, zip dumps) is giti
 ## Leaderboard key
 
 `Scoreboard.cs` embeds the leaderboard's **public** key, which Leaderboard Creator is designed to ship in game clients. No secret key is committed. As with any client-only leaderboard, scores can be submitted by anyone who has the public key.
+
+## License
+
+The original code in this repository (game scripts under `FootballGame/Assets/Scripts/` and the top-level `.cs` scripts, tests, CI, and tooling) is MIT licensed. See [LICENSE](LICENSE).
+
+Bundled third-party content is **not** covered by that license and stays under its own terms. That includes the Unity Asset Store packs under `FootballGame/Assets/Assets/` (POLYGON city pack by Synty, Obstacle Course Pack, Kabungus Household Items), Unity Starter Assets, TextMesh Pro, and Leaderboard Creator.
