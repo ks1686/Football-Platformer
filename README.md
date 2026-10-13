@@ -10,8 +10,8 @@ There is no ASP.NET or other server code in this repo. The "web integration" is 
 2. Open `Assets/Scenes/Main Menu.unity` and press Play.
 
 Gameplay:
-- The timer (`TimerManager`, 60 s by default) counts down in `SampleScene`.
-- Each coin (`Coin`) adds 100 points through `ScoreManager`.
+- The timer (`TimerManager`) counts down 180 s in `SampleScene` (the script default is 60 s).
+- Each coin (`Coin`, `CustomMoney` prefab) adds 8000 points through `ScoreManager` in `SampleScene` (prefab default 100). The end screen shows the score against a 400000 target.
 - When time runs out, `GameManager` saves the score to `PlayerPrefs` and loads **Exit Scene**. From there you can restart, go back to the menu, or open the **Score Board** to submit and view scores.
 - The live player is the Starter Assets first-person capsule (`TestPlayer`, tag `Player`). The leftover `BallmanController` disables itself when that player is present.
 
